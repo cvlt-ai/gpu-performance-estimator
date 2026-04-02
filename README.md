@@ -1,5 +1,10 @@
 # GPU Performance Estimator
 
+[![CI](https://github.com/cvlt-ai/gpu-performance-estimator/actions/workflows/ci.yml/badge.svg)](https://github.com/cvlt-ai/gpu-performance-estimator/actions)
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/gpu-performance-estimator.svg)](https://pypi.org/project/gpu-performance-estimator/)
+
 A sophisticated tool for measuring GPU performance across different precision types, including separate measurements for raw CUDA core performance and tensor core performance.
 
 ## Features
