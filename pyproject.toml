@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-performance-estimator"
+version = "2.1.0"
+description = "A sophisticated tool for measuring GPU performance across different precision types"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "CVLT AI", email = "info@cvlt.ai"}
+]
+keywords = ["gpu", "benchmark", "performance", "cuda", "tensor-core", "nvidia"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Benchmark",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+gpu-bench = "gpu_performance_estimator:main"
+
+[project.urls]
+Homepage = "https://github.com/cvlt-ai/gpu-performance-estimator"
+Documentation = "https://github.com/cvlt-ai/gpu-performance-estimator#readme"
+Repository = "https://github.com/cvlt-ai/gpu-performance-estimator.git"
+Issues = "https://github.com/cvlt-ai/gpu-performance-estimator/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=src --cov-report=term-missing"
